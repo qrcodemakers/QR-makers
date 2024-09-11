@@ -1,193 +1,183 @@
-
 <!DOCTYPE html>
-<!-- standerd mode so the web can read everything -->
-<meta charset="UTF-8"/>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphiCosta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+    <style>
+        body { margin: 0; font-family: 'Roboto', sans-serif; }
+        .page { display: none; height: 100vh; width: 100vw; text-align: center; }
+        .page.active { display: flex; justify-content: center; align-items: center; }
 
+        /* Welcome Page Styles */
+        .welcome-page { 
+            background: linear-gradient(135deg, #FF69B4, #00BFFF, #000000, #FFFFFF); 
+            background-size: 400% 400%; 
+            animation: gradientBG 20s ease infinite; 
+            color: #fff; 
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        .welcome-container { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            text-align: center; 
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: url('https://cdn.me-qr.com/ListofLinks/82558.png') no-repeat center center;
+            background-size: contain;
+            margin: 0 auto;
+        }
+        .welcome-title { 
+            font-size: 3rem; 
+            margin: 10px 0; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+        }
+        .arrow { 
+            cursor: pointer; 
+            margin-top: 20px; 
+            font-size: 5rem; 
+            color: #fff; 
+            display: inline-block; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+            transition: color 0.3s, transform 0.3s; 
+        }
+        .arrow:before {
+            content: '➜'; 
+            font-size: 1em; 
+        }
+        .arrow:hover { 
+            color: #FFD700; 
+            transform: scale(1.1); 
+        }
 
-```
-<!DOCTYPE html>
-<html lang="en"><head>
-	<title>
-			List of Links    </title>
-	<link rel="icon" type="image/png" href="/favicon.ico">
-	<link rel="alternate" type="application/rss+xml" href="https://me-qr.com/feed.rss">
-	<meta name="description" content="Easy QR code maker. Create QR code in two clicks: 👉 upload your link, 👉 generate QR and 👍 download it!">
-	<meta name="keywords" content="qr code generator, free qr code, create qr code online, qr barcode, free qr code, barcode maker">
-	<link href="https://me-qr.com/assets/css/material-kit.min.css?v=1" rel="stylesheet">
-	<link href="https://me-qr.com/assets/css/base-style.css" rel="stylesheet">
-	<meta charset="utf-8">
-	<link rel="apple-touch-icon" sizes="76x76" href="https://me-qr.com/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
-	<meta property="og:type" content="website">
-	<meta property="og:locale:alternate" content="en">
-	<meta property="og:locale:alternate" content="es">
-	<meta property="og:locale:alternate" content="ms">
-	<meta property="og:locale:alternate" content="pt">
-	<meta property="og:locale:alternate" content="ru">
-	<meta property="og:locale:alternate" content="vi">
-	<meta property="og:locale:alternate" content="fr">
-	<meta property="og:locale:alternate" content="th">
-	<meta property="og:locale:alternate" content="de">
-	<meta property="og:locale:alternate" content="ar">
-	<meta property="og:locale:alternate" content="id">
-	<meta property="og:locale:alternate" content="ja">
-	<meta property="og:locale:alternate" content="ko">
-	<meta property="og:locale:alternate" content="nl">
-	<meta property="og:locale:alternate" content="sv">
-	<meta property="og:locale:alternate" content="it">
-	<meta property="og:title" content="List" of="" links="">
-	<meta property="og:locale" content="en/">
-	<meta property="og:description" content="Easy" qr="" code="" maker.="" create="" in="" two="" clicks:="" 👉="" upload="" your="" link,="" generate="" and="" 👍="" download="" it!="">
-	<meta property="og:image" content="https://me-qr.com/static/pages/logo/logo-v2.jpg/">
-	</head>
-	<body class="landing-page sidebar-collapse">
-	<style type="text/css">
-			.content {
-				padding-top: 80px;
-				position: relative;
-				z-index: 1;
-				flex: 1 1 1010px;
-				font-family: Roboto,sans-serif;
-			}
-			.main-theme {
-				overflow-y: auto;
-			}
-	
-						.avatar {
-				width: 90px;
-				min-height: 90px;
-				background: url("https://cdn.me-qr.com/ListofLinks/82558.png") center center no-repeat;
-				border-radius: 50%;
-				background-size: cover;
-				margin-bottom: 20px;
-				}
+        /* Landing Page Styles */
+        .landing-page { 
+            background: url('/Cute\ sticker\ collection\,\ vector\ art\ \ -\ Back\ to\ school.jpeg') no-repeat center center ; 
 			
-			.title {
-				font-size: 22px;
-				max-width: 591px;
-				text-align: center;
-				font-weight: 700;
-				line-height: 36px;
-				margin-bottom: 2px;
-				margin-top: 0;
-			}
-			.title-description {
-				margin-bottom: 10px;
-				font-size: 14px;
-				max-width: 591px;
-				text-align: center;
-				line-height: 21px;
-				font-weight: 500;
-			}
-			.link-btn {
-				width: 100%;
-				margin-top: 10px;
-				padding: 0 15px;
-				border-radius: 8px;
-				position: relative;
-				flex: 0 0 auto;
-				transition: all 0.2s ease-in-out;
-				text-align: center;
-				height: 53px;
-				overflow-x: hidden;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-weight: 500;
-				border: 2px solid #e63b7a;
-				background-color: #e63b7a;
-				color: #FFFFFF;
-				max-width: 600px;
-			}
-			.link-btn:hover {
-				background-color: transparent;
-				color: #FFFFFF;
-			}
-			.link-img {
-				height: 28px;
-				position: absolute;
-				left: 10px;
-			}
-			.social-btn {
-				width: 60px;
-				height: 60px;
-			}
-			.social-inner {
-				display: flex;
-				gap: 10px;
-				flex-wrap: wrap;
-				margin-top: 25px;
-				justify-content: center;
-			}
-		</style>
-	<div class="container-fluid d-flex justify-content-center p-0">
-	<div class="container d-flex justify-content-center" style="background-color: #ffffff">
-	<div class="content d-flex flex-column align-items-center main-theme pr-0 pl-0" style="min-height: 100vh">
-	<div class="avatar"></div>
-	<h1 class="title" id="title" style="color: rgb(0, 0, 0);">GraphiCosta</h1>
-	<p class="title-description" id="description" style="color: rgb(0, 0, 0);">unique design with a reasonable cost</p>
-	<a href="https://www.facebook.com/groups/2340679169417871/permalink/2512367952248991/?mibextid=Nif5oz" target="_blank" class="link-btn">
-	<img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82700.png">
-	GraphiCosta "join our group"
-	</a>
-	<a href="https://instagram.com/graphicosta?igshid=MTA2NDdkNWE=" target="_blank" class="link-btn">
-	<img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82702.png">
-	Follow me on instagram
-	</a>
-	<a href="https://www.facebook.com/Graphicollage?mibextid=ZbWKwL" target="_blank" class="link-btn">
-	<img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png">
-	   GraphiCollage‏‏‎ "Custom business design"‏‏‎
-	</a>
-	<a href="https://www.behance.net/Graphicollage" target="_blank" class="link-btn">
-	<img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82706.png">
-	Find all my art work
-	</a>
-	<a href="https://www.youtube.com/channel/UC5y703IehD4KHem38XIbBDQ" target="_blank" class="link-btn">
-	<img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82708.png">
-	Watch my videos
-	</a>
-	<div class="social-inner">
-	</div>
-	</div>
-	</div>
-	</div>
-	<script>
-		function getLightOrBlackColor(color) {
-			const hex = color.replace("#", "");
-			const c_r = parseInt(hex.substr(0, 2), 16);
-			const c_g = parseInt(hex.substr(2, 2), 16);
-			const c_b = parseInt(hex.substr(4, 2), 16);
-			const brightness = (c_r * 299 + c_g * 587 + c_b * 114) / 1000;
-			const title = document.querySelector("#title")
-			const description = document.querySelector("#description")
-			const updatedColor = brightness > 155 ? "#000000" : "#FFFFFF";
-			title.style.color = updatedColor;
-			description.style.color = updatedColor;
-		}
-		getLightOrBlackColor("#ffffff")
-		</script>
-	
-	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LNNBBTRGEJ"></script>
-	<script>
-			window.dataLayer = window.dataLayer || [];
-	
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-	
-			gtag('js', new Date());
-	
-			gtag('config', 'G-LNNBBTRGEJ');
-		</script>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap">
-	
-	
-	
-	
-	<script defer="" src="/assets/js/lazy.js?v=2"></script>
-	<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vb26e4fa9e5134444860be286fd8771851679335129114" integrity="sha512-M3hN/6cva/SjwrOtyXeUa5IuCT0sedyfT+jK/OV+s+D0RnzrTfwjwJHhd+wYfMm9HJSrZ1IKksOdddLuN6KOzw==" data-cf-beacon="{&quot;rayId&quot;:&quot;7b0acc5c695f41f0&quot;,&quot;version&quot;:&quot;2023.3.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;ba9386ef69374dbc9ca25bc62eb77e0a&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
-	
-	
-	</body></html>
+            background-size: cover; /* Cover the entire area */
+            color: #070707; 
+			
+            flex-direction: column; 
+            padding: 20px; 
+            box-sizing: border-box; 
+        }
+        .avatar { 
+            width: 100px; 
+            height: 100px; 
+            background: url('https://cdn.me-qr.com/ListofLinks/82558.png')  center center no-repeat; 
+            border-radius: 50%; 
+            background-size: cover; 
+            margin: 20px auto; 
+        }
+        .title { 
+            font-size: 2.5rem; 
+            margin: 0; 
+        }
+        .title-description { 
+            font-size: 1.2rem; 
+            margin: 10px 0; 
+        }
+
+        /* Button Styles */
+        .link-btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 10px auto; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border: 2px solid #080808; 
+            background: rgb(209, 86, 178); 
+            color: #f6f8f8; 
+            font-size: 1rem; 
+            text-decoration: none; 
+            max-width: 400px; 
+            transition: background-color 0.3s, color 0.3s, transform 0.3s; 
+            width: 300px; 
+            height: 60px; 
+            box-sizing: border-box; 
+        }
+        .link-btn:hover { 
+            background-color: #00bcd4; 
+            color: #fff; 
+            transform: scale(1.05); 
+        }
+        .link-img { 
+            height: 30px; 
+            margin-right: 15px; 
+        }
+        .link-text { 
+            flex: 1; 
+        }
+
+        @media (max-width: 600px) {
+            .welcome-title { font-size: 2rem; }
+            .arrow { font-size: 3rem; }
+            .title { font-size: 2rem; }
+            .title-description { font-size: 1rem; }
+            .link-btn { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div class="page welcome-page active" id="welcomePage">
+        <div class="welcome-container">
+            <div class="logo"></div>
+            <h1 class="welcome-title">Welcome to GraphiCosta</h1>
+            <div class="arrow" onclick="showLandingPage()"></div>
+        </div>
+    </div>
+
+    <!-- Landing Page -->
+    <div class="page landing-page" id="landingPage">
+        <div class="avatar"></div>
+        <h1 class="title">GraphiCosta</h1>
+        <p class="title-description">Unique design with a reasonable cost</p>
+        <a href="https://www.facebook.com/groups/2340679169417871/permalink/2512367952248991/?mibextid=Nif5oz" target="_blank" class="link-btn">
+            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82700.png" alt="Facebook">
+            <span class="link-text">Join our group</span>
+        </a>
+        <a href="https://instagram.com/graphicosta?igshid=MTA2NDdkNWE=" target="_blank" class="link-btn">
+            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82702.png" alt="Instagram">
+            <span class="link-text">Follow me on Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/Graphicollage?mibextid=ZbWKwL" target="_blank" class="link-btn">
+            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
+            <span class="link-text">GraphiCollage "Custom business design"</span>
+        </a>
+        <a href="https://www.behance.net/Graphicollage" target="_blank" class="link-btn">
+            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82706.png" alt="Behance">
+            <span class="link-text">Find all my artwork</span>
+        </a>
+        <a href="https://www.youtube.com/channel/UC5y703IehD4KHem38XIbBDQ" target="_blank" class="link-btn">
+            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82708.png" alt="YouTube">
+            <span class="link-text">Watch my videos</span>
+        </a>
+        <a href="https://www.facebook.com/people/GraphiCosta/61564938864926/?_rdr" target="_blank" class="link-btn">
+            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
+            <span class="link-text">Visit our Facebook Page</span>
+        </a>
+    </div>
+
+    <script>
+        function showLandingPage() {
+            document.getElementById('welcomePage').classList.remove('active');
+            document.getElementById('landingPage').classList.add('active');
+        }
+    </script>
+</body>
+</html>
