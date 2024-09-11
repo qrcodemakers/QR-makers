@@ -12,7 +12,7 @@
 
         /* Welcome Page Styles */
         .welcome-page { 
-            background: linear-gradient(135deg, #FF69B4, #00BFFF, #000000, #FFFFFF); 
+            background: linear-gradient(135deg, #FF69B4, #00BFFF,#FFFFFF); 
             background-size: 400% 400%; 
             animation: gradientBG 20s ease infinite; 
             color: #fff; 
@@ -34,56 +34,49 @@
             text-align: center; 
         }
         .logo {
-            width: 100px;
-            height: 100px;
+            width: 120px; /* Logo size */
+            height: 120px; /* Logo size */
             background: url('https://cdn.me-qr.com/ListofLinks/82558.png') no-repeat center center;
             background-size: contain;
-            margin: 0 auto;
+            margin: 0 auto 20px; /* Margin to separate from the title */
         }
         .welcome-title { 
-            font-size: 3rem; 
-            margin: 10px 0; 
+            font-size: 2.5rem; /* Adjusted font size */
+            margin: 0; 
             text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
-        }
-        .arrow { 
-            cursor: pointer; 
-            margin-top: 20px; 
-            font-size: 5rem; 
-            color: #fff; 
-            display: inline-block; 
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
-            transition: color 0.3s, transform 0.3s; 
-        }
-        .arrow:before {
-            content: '➜'; 
-            font-size: 1em; 
-        }
-        .arrow:hover { 
-            color: #FFD700; 
-            transform: scale(1.1); 
         }
 
         /* Landing Page Styles */
         .landing-page { 
-            background: url('https://i.pinimg.com/236x/a7/05/86/a7058605a027b2ed4c4e9a1f98bee317.jpg') no-repeat center center ; 
-			
-            background-size: cover; /* Cover the entire area */
-            color: #070707; 
-			
+            position: relative; 
+            color: #fff; 
             flex-direction: column; 
             padding: 20px; 
             box-sizing: border-box; 
+            background: linear-gradient(135deg, #53bde1, #FFFFFF); /* Light blue to white gradient */
+        }
+        .landing-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/Cute sticker collection, vector art - Back to school.jpeg') no-repeat center center; 
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
         }
         .avatar { 
             width: 100px; 
             height: 100px; 
-            background: url('https://cdn.me-qr.com/ListofLinks/82558.png')  center center no-repeat; 
+            background: url('https://cdn.me-qr.com/ListofLinks/82558.png') center center no-repeat; 
             border-radius: 50%; 
             background-size: cover; 
-            margin: 20px auto; 
+            margin: 40px auto; /* Adjusted margin for visibility */
         }
         .title { 
-            font-size: 2.5rem; 
+            font-size: 2.5rem; /* Title size */
             margin: 0; 
         }
         .title-description { 
@@ -92,6 +85,14 @@
         }
 
         /* Button Styles */
+        .button-container {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(5px); /* Blurred background effect */
+            margin: 20px auto; /* Margin for spacing */
+            max-width: 400px; /* Max width for the container */
+        }
         .link-btn { 
             display: flex; 
             align-items: center; 
@@ -104,11 +105,10 @@
             color: #f6f8f8; 
             font-size: 1rem; 
             text-decoration: none; 
-            max-width: 400px; 
-            transition: background-color 0.3s, color 0.3s, transform 0.3s; 
-            width: 300px; 
+            width: 100%; /* Full width for buttons */
             height: 60px; 
             box-sizing: border-box; 
+            transition: background-color 0.3s, color 0.3s, transform 0.3s; 
         }
         .link-btn:hover { 
             background-color: #00bcd4; 
@@ -124,8 +124,8 @@
         }
 
         @media (max-width: 600px) {
-            .welcome-title { font-size: 2rem; }
-            .arrow { font-size: 3rem; }
+            .welcome-title { font-size: 2rem; } /* Smaller title on mobile */
+            .avatar { margin: 40px auto; } /* Adjusted for mobile visibility */
             .title { font-size: 2rem; }
             .title-description { font-size: 1rem; }
             .link-btn { width: 90%; }
@@ -138,7 +138,6 @@
         <div class="welcome-container">
             <div class="logo"></div>
             <h1 class="welcome-title">Welcome to GraphiCosta</h1>
-            <div class="arrow" onclick="showLandingPage()"></div>
         </div>
     </div>
 
@@ -147,37 +146,39 @@
         <div class="avatar"></div>
         <h1 class="title">GraphiCosta</h1>
         <p class="title-description">Unique design with a reasonable cost</p>
-        <a href="https://www.facebook.com/groups/2340679169417871/permalink/2512367952248991/?mibextid=Nif5oz" target="_blank" class="link-btn">
-            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82700.png" alt="Facebook">
-            <span class="link-text">Join our group</span>
-        </a>
-        <a href="https://instagram.com/graphicosta?igshid=MTA2NDdkNWE=" target="_blank" class="link-btn">
-            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82702.png" alt="Instagram">
-            <span class="link-text">Follow me on Instagram</span>
-        </a>
-        <a href="https://www.facebook.com/Graphicollage?mibextid=ZbWKwL" target="_blank" class="link-btn">
-            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
-            <span class="link-text">GraphiCollage "Custom business design"</span>
-        </a>
-        <a href="https://www.behance.net/Graphicollage" target="_blank" class="link-btn">
-            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82706.png" alt="Behance">
-            <span class="link-text">Find all my artwork</span>
-        </a>
-        <a href="https://www.youtube.com/channel/UC5y703IehD4KHem38XIbBDQ" target="_blank" class="link-btn">
-            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82708.png" alt="YouTube">
-            <span class="link-text">Watch my videos</span>
-        </a>
-        <a href="https://www.facebook.com/people/GraphiCosta/61564938864926/?_rdr" target="_blank" class="link-btn">
-            <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
-            <span class="link-text">Visit our Facebook Page</span>
-        </a>
+        <div class="button-container">
+            <a href="https://www.facebook.com/people/GraphiCosta/61564938864926/?_rdr" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
+                <span class="link-text">Visit our Facebook Page</span>
+            </a>
+            <a href="https://instagram.com/graphicosta?igshid=MTA2NDdkNWE=" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82702.png" alt="Instagram">
+                <span class="link-text">Follow me on Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/groups/2340679169417871/permalink/2512367952248991/?mibextid=Nif5oz" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82700.png" alt="Facebook">
+                <span class="link-text">Join our group</span>
+            </a>
+            <a href="https://www.facebook.com/Graphicollage?mibextid=ZbWKwL" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
+                <span class="link-text">GraphiCollage "To Enhance your business"</span>
+            </a>
+            <a href="https://www.youtube.com/channel/UC5y703IehD4KHem38XIbBDQ" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82708.png" alt="YouTube">
+                <span class="link-text">Watch my videos</span>
+            </a>
+            <a href="https://www.behance.net/Graphicollage" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82706.png" alt="Behance">
+                <span class="link-text">Find all my artwork</span>
+            </a>
+        </div>
     </div>
 
     <script>
-        function showLandingPage() {
+        setTimeout(() => {
             document.getElementById('welcomePage').classList.remove('active');
             document.getElementById('landingPage').classList.add('active');
-        }
+        }, 3000); // Transition after 3 seconds
     </script>
 </body>
 </html>
