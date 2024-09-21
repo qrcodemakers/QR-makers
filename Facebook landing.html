@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GraphiCosta</title>
+    <title>Facebook Pages</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
     <style>
         body { margin: 0; font-family: 'Roboto', sans-serif; }
@@ -12,7 +12,7 @@
 
         /* Welcome Page Styles */
         .welcome-page { 
-            background: linear-gradient(135deg, #FF69B4, #00BFFF,#FFFFFF); 
+            background: linear-gradient(135deg, #FF69B4, #00BFFF, #FFFFFF); 
             background-size: 400% 400%; 
             animation: gradientBG 20s ease infinite; 
             color: #fff; 
@@ -34,16 +34,21 @@
             text-align: center; 
         }
         .logo {
-            width: 120px; /* Logo size */
-            height: 120px; /* Logo size */
+            width: 120px; 
+            height: 120px; 
             background: url('https://cdn.me-qr.com/ListofLinks/82558.png') no-repeat center center;
             background-size: contain;
-            margin: 0 auto 20px; /* Margin to separate from the title */
+            margin: 0 auto 20px; 
         }
         .welcome-title { 
-            font-size: 2.5rem; /* Adjusted font size */
+            font-size: 2.5rem; 
             margin: 0; 
             text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+        }
+
+        /* Loading Dots Animation */
+        #dots {
+            display: inline-block;
         }
 
         /* Landing Page Styles */
@@ -53,7 +58,7 @@
             flex-direction: column; 
             padding: 20px; 
             box-sizing: border-box; 
-            background: linear-gradient(135deg, #53bde1, #FFFFFF); /* Light blue to white gradient */
+            background: linear-gradient(135deg, #53bde1, #FFFFFF); 
         }
         .landing-page::before {
             content: '';
@@ -68,16 +73,15 @@
             z-index: -1;
         }
         .avatar { 
-            width: 100px; /* Set a fixed width */
-            height: 100px; /* Set a fixed height */
+            width: 100px; 
+            height: 100px; 
             background: url('https://cdn.me-qr.com/ListofLinks/82558.png') center center no-repeat; 
             border-radius: 30%; 
-            background-size: cover; /* Ensure the image covers the area */
-          
+            background-size: cover; 
         }
         .title { 
             color: #087bc8;
-            font-size: 2.5rem; /* Title size */
+            font-size: 2.5rem; 
             margin: 0; 
         }
         .title-description { 
@@ -87,12 +91,12 @@
 
         /* Button Styles */
         .button-container {
-            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.2); 
             border-radius: 15px;
             padding: 20px;
-            backdrop-filter: blur(5px); /* Blurred background effect */
-            margin: 20px auto; /* Margin for spacing */
-            max-width: 400px; /* Max width for the container */
+            backdrop-filter: blur(5px); 
+            margin: 20px auto; 
+            max-width: 400px; 
         }
         .link-btn { 
             display: flex; 
@@ -106,7 +110,7 @@
             color: #f6f8f8; 
             font-size: 1rem; 
             text-decoration: none; 
-            width: 100%; /* Full width for buttons */
+            width: 100%; 
             height: 60px; 
             box-sizing: border-box; 
             transition: background-color 0.3s, color 0.3s, transform 0.3s; 
@@ -125,25 +129,20 @@
         }
 
         @media (max-width: 600px) {
-            .welcome-title { font-size: 2rem; } /* Smaller title on mobile */
+            .welcome-title { font-size: 2rem; } 
             .avatar { 
-                width: 100px; /* Smaller size on mobile */
+                width: 100px; 
                 height: 100px; 
             }
             .title { font-size: 2rem; }
             .title-description { font-size: 1rem; }
             .link-btn { width: 90%; }
         }
-        .title-description{
-
+        .title-description {
             color: #087bc8;
-
         }
-        .title2{
-            color:rgb(239, 118, 185); ;
-                
-
-
+        .title2 {
+            color: rgb(239, 118, 185);
         }
     </style>
 </head>
@@ -152,7 +151,7 @@
     <div class="page welcome-page active" id="welcomePage">
         <div class="welcome-container">
             <div class="logo"></div>
-            <h1 class="welcome-title">Welcome to GraphiCosta</h1>
+            <h1 class="welcome-title">Loading<span id="dots">.</span></h1>
         </div>
     </div>
 
@@ -160,33 +159,32 @@
     <div class="page landing-page" id="landingPage">
         <div class="avatar"></div>
         <h1 class="title">Graphi<span class="title2">Costa</span></h1>
-        
-        <p class="title-description">Unique design with reasonable cost</p>
+        <p class="title-description">Facebook Pages:</p>
         <div class="button-container">
-            <a href="./Facebook landing.html" target="_blank" class="link-btn">
+            <a href="https://www.facebook.com/people/GraphiCosta/61564938864926/?_rdr" target="_blank" class="link-btn">
                 <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
-                <span class="link-text">Visit our Facebook Pages</span>
+                <span class="link-text">Visit our Facebook Page</span>
             </a>
-            <a href="https://chat.whatsapp.com/GgGgxwjObOz4VKzIUvzIYf" target="_blank" class="link-btn">
+            <a href="https://www.facebook.com/groups/2340679169417871/permalink/2512367952248991/?mibextid=Nif5oz" target="_blank" class="link-btn">
                 <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82700.png" alt="Facebook">
-                <span class="link-text">Join our WhatsApp group</span>
+                <span class="link-text">Join our group</span>
             </a>
-            <a href="https://instagram.com/graphicosta?igshid=MTA2NDdkNWE=" target="_blank" class="link-btn">
-                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82702.png" alt="Instagram">
-                <span class="link-text">Follow us on Instagram</span>
-            </a>
-            <a href="https://www.youtube.com/channel/UC5y703IehD4KHem38XIbBDQ" target="_blank" class="link-btn">
-                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82708.png" alt="YouTube">
-                <span class="link-text">Watch my videos</span>
-            </a>
-            <a href="https://www.behance.net/Graphicollage" target="_blank" class="link-btn">
-                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82706.png" alt="Behance">
-                <span class="link-text">Find all my artwork</span>
+            <a href="https://www.facebook.com/Graphicollage?mibextid=ZbWKwL" target="_blank" class="link-btn">
+                <img class="link-img" src="https://cdn.me-qr.com/ListofLinks/82704.png" alt="Facebook">
+                <span class="link-text">GraphiCollage "To Enhance your business"</span>
             </a>
         </div>
     </div>
 
     <script>
+        let dotCount = 0;
+        const dots = document.getElementById("dots");
+
+        setInterval(() => {
+            dotCount = (dotCount + 1) % 4; // Reset after 3 dots
+            dots.textContent = ".".repeat(dotCount); // Update dots
+        }, 500);
+
         setTimeout(() => {
             document.getElementById('welcomePage').classList.remove('active');
             document.getElementById('landingPage').classList.add('active');
